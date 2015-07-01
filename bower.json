@@ -19,7 +19,7 @@
     "css-namespace",
     "sass-namespace",
     "scss-namespace",
-    "namespaces",
+    "namespaces"
   ],
   "dependencies": {
     "sass-require": "~1.0.2"
