@@ -1,6 +1,6 @@
 {
   "name": "css-namespace",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/mintuz/css-namespace",
   "authors": [
     "Adam Bulmer <mintuz1990@gmail.com>"
@@ -13,6 +13,13 @@
     "bower_components",
     "test",
     "tests"
+  ],
+  "keywords": [
+    "css",
+    "css-namespace",
+    "sass-namespace",
+    "scss-namespace",
+    "namespaces",
   ],
   "dependencies": {
     "sass-require": "~1.0.2"
