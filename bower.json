@@ -1,0 +1,20 @@
+{
+  "name": "css-namespace",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mintuz/css-namespace",
+  "authors": [
+    "Adam Bulmer <mintuz1990@gmail.com>"
+  ],
+  "description": "A small utility Scss Mixin to try resolve the global CSS namespace",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sass-require": "~1.0.2"
+  }
+}

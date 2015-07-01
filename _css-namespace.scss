@@ -1,0 +1,14 @@
+@import '../sass-require/sass-require';
+
+@mixin css-namespace($namespace, $matcher: '') {
+  
+  @if (index($sass-require__components, $namespace) != null) {
+		@warn "The namespace `#{$namespace}` has already been defined.";
+	}
+
+  @include define($namespace) {
+    [data-namespace#{$matcher}="#{$namespace}"] { 
+      @content;
+    }
+  }   
+}

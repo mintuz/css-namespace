@@ -1,0 +1,15 @@
+@import '../css-namespace';
+
+@include css-namespace('test-namespace') {
+  
+  background-color: red; // Would apply to the namespace container
+  
+  .test {
+    background-color: yellow; // Would only apply to an element within the namespace container
+  }
+
+	&.test {
+		background-color: blue; // Would apply to the class where a namespace has been defined.
+	}
+
+}
