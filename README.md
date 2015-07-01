@@ -6,6 +6,10 @@ By no means does this mixin prevent developers from modifying a style class dire
 
 ## Install
 
+```
+bower install css-namespace --save
+```
+
 ## Usage
 
 All namespaces are defined with a data attribute on the HTML element
@@ -17,6 +21,8 @@ All namespaces are defined with a data attribute on the HTML element
 Then create a file per namespace and use the following code
 
 ```
+@import '../bower_components/css-namespace/css-namespace';
+
 @include css-namespace('test-namespace') {
   
   background-color: red;
