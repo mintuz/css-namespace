@@ -41,6 +41,20 @@ If you are starting a new project, I recommend sticking with the data attribute 
 
 However this was brought in to support legacy/older projects which have been around for a while and prevent a massive refactor.
 
+
+```
+@import '../bower_components/css-namespace/css-namespace';
+
+@include css-namespace($namespace:'test-namespace', $mode:'class') {
+  
+  background-color: red;
+  
+  .test {
+    background-color: yellow;
+  }
+}
+```
+
 ## CSS Singletons
 
 By default, if you define a css-namespace twice, it will throw a warning in your terminal.
