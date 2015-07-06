@@ -12,7 +12,7 @@ bower install css-namespace --save
 
 ## Usage
 
-All namespaces are defined with a data attribute on the HTML element
+By default all namespaces are defined with a data attribute on the HTML element
 
 ```
 <div data-namespace="test-namespace"></div>
@@ -32,6 +32,14 @@ Then create a file per namespace and use the following code
   }
 }
 ```
+
+### CSS Class selector Mode
+
+It is possible to override the default behaviour and instead of outputting the namespace as a data-attribute, use a traditional CSS Class. 
+
+If you are starting a new project, I recommend sticking with the data attribute method.
+
+However this was brought in to support legacy/older projects which have been around for a while and prevent a massive refactor.
 
 ## CSS Singletons
 
