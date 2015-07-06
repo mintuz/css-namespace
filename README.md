@@ -33,7 +33,34 @@ Then create a file per namespace and use the following code
 }
 ```
 
-If you define a css-namespace twice, it will throw a warning in your terminal.
+## CSS Singletons
+
+By default, if you define a css-namespace twice, it will throw a warning in your terminal.
+To get round this (maybe you wish to seperate your namespace into different files, use the following code). 
+
+The reason singleton mode is set to true is that in most cases you won't want to alter a CSS Namespace, and should treat them as immutable. 
+
+```
+@import '../bower_components/css-namespace/css-namespace';
+
+// File 1
+
+@include css-namespace($namespace:'test-namespace', $singleton:false) {
+  
+  background-color: red;
+  
+  .test {
+    background-color: yellow;
+  }
+}
+
+// File 2
+
+@include css-namespace($namespace:'test-namespace', $singleton:false) {
+  background-color: blue;
+}
+
+```
 
 ## Warning
 This mixin does increase the CSS specificity of classes which isn't ideal but it doesn't override it so much that it is problematic. If you only work within the namespaced files, you will be fine. 
