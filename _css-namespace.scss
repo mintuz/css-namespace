@@ -1,6 +1,8 @@
 @import '../sass-require/sass-require';
 
-@mixin css-namespace($namespace, $matcher: '', $singleton:true) {
+// Public Mixins
+
+@mixin css-namespace($namespace, $matcher: '', $singleton:true, $mode: 'data') {
   
   // Only output namespace once
   @if ($singleton) {
@@ -11,15 +13,32 @@
 
 	  @include define($namespace) {
 	    
-	    [data-namespace#{$matcher}="#{$namespace}"] { 
-	      @content;
-	    }
+			@include __css-namespace__output-styles($namespace, $mode, $matcher) {
+				@content;
+			}
 	  }
 	
 	// Allow extension of namespace
   } @else {
 
-  	[data-namespace#{$matcher}="#{$namespace}"] { 
+  	@include __css-namespace__output-styles($namespace, $mode, $matcher) {
+			@content;
+		}
+  }
+}
+
+// Private Mixins
+
+@mixin __css-namespace__output-styles($namespace, $mode, $matcher) {
+	
+	@if ($mode == 'class') {
+		
+		.#{namespace} {
+			@content;
+		}
+  } @else {
+		
+		[data-namespace#{$matcher}="#{$namespace}"] { 
       @content;
     }
   }

@@ -1,0 +1,11 @@
+.namespace {
+  background-color: red; }
+  .namespace .test {
+    background-color: yellow; }
+  .namespace.test {
+    background-color: blue; }
+
+.namespace .new-class {
+  background-color: black; }
+
+/*# sourceMappingURL=class-mode.css.map */
