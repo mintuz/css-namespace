@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AASI,iCAA8C;ECLhD,gBAAgB,EAAE,GAAG;EAErB,uCAAM;IACJ,gBAAgB,EAAE,MAAM;EAG3B,sCAAO;IACN,gBAAgB,EAAE,IAAI",
-"sources": ["../_css-namespace.scss","style.scss"],
-"names": [],
-"file": "style.css"
-}

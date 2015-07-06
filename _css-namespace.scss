@@ -1,14 +1,26 @@
 @import '../sass-require/sass-require';
 
-@mixin css-namespace($namespace, $matcher: '') {
+@mixin css-namespace($namespace, $matcher: '', $singleton:true) {
   
-  @if (index($sass-require__components, $namespace) != null) {
-		@warn "The namespace `#{$namespace}` has already been defined.";
-	}
+  // Only output namespace once
+  @if ($singleton) {
+  
+	  @if (index($sass-require__components, $namespace) != null) {
+			@warn "The namespace `#{$namespace}` has already been defined.";
+		}
 
-  @include define($namespace) {
-    [data-namespace#{$matcher}="#{$namespace}"] { 
+	  @include define($namespace) {
+	    
+	    [data-namespace#{$matcher}="#{$namespace}"] { 
+	      @content;
+	    }
+	  }
+	
+	// Allow extension of namespace
+  } @else {
+
+  	[data-namespace#{$matcher}="#{$namespace}"] { 
       @content;
     }
-  }   
+  }
 }

@@ -1,0 +1,23 @@
+@import '../css-namespace';
+
+@include css-namespace($namespace: 'test-namespace', $singleton:false) {
+  
+  background-color: red; // Would apply to the namespace container
+  
+  .test {
+    background-color: yellow; // Would only apply to an element within the namespace container
+  }
+
+	&.test {
+		background-color: blue; // Would apply to the class where a namespace has been defined.
+	}
+
+}
+
+@include css-namespace($namespace: 'test-namespace', $singleton:false) {
+  
+  .new-class {
+    background-color: black;
+  }
+
+}

@@ -5,4 +5,7 @@
   [data-namespace="test-namespace"].test {
     background-color: blue; }
 
-/*# sourceMappingURL=style.css.map */
+[data-namespace="test-namespace"] .new-class {
+  background-color: black; }
+
+/*# sourceMappingURL=extend.css.map */
