@@ -1,25 +1,42 @@
 @import '../sass-require/sass-require';
 
-@mixin css-namespace($namespace, $matcher: '', $singleton:true) {
-  
+// Public Mixins
+@mixin css-namespace($namespace, $matcher: '', $singleton:true, $mode: 'data') {
+
   // Only output namespace once
   @if ($singleton) {
-  
-	  @if (index($sass-require__components, $namespace) != null) {
-			@warn "The namespace `#{$namespace}` has already been defined.";
-		}
 
-	  @include define($namespace) {
-	    
-	    [data-namespace#{$matcher}="#{$namespace}"] { 
-	      @content;
-	    }
-	  }
-	
-	// Allow extension of namespace
+    @if (index($sass-require__components, $namespace) != null) {
+      @warn "The namespace `#{$namespace}` has already been defined.";
+    }
+
+    @include define($namespace) {
+
+      @include __css-namespace__output-styles($namespace, $mode, $matcher) {
+        @content;
+      }
+    }
+
+    // Allow extension of namespace
+    } @else {
+
+    @include __css-namespace__output-styles($namespace, $mode, $matcher) {
+      @content;
+    }
+  }
+}
+
+// Private Mixins
+@mixin __css-namespace__output-styles($namespace, $mode, $matcher) {
+
+  @if ($mode == 'class') {
+
+    .#{namespace} {
+      @content;
+    }
   } @else {
 
-  	[data-namespace#{$matcher}="#{$namespace}"] { 
+    [data-namespace#{$matcher}="#{$namespace}"] { 
       @content;
     }
   }
