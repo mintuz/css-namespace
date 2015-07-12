@@ -1,7 +1,6 @@
 @import '../sass-require/sass-require';
 
 // Public Mixins
-
 @mixin css-namespace($namespace, $matcher: '', $singleton:true, $mode: 'data') {
   
   // Only output namespace once
@@ -28,7 +27,6 @@
 }
 
 // Private Mixins
-
 @mixin __css-namespace__output-styles($namespace, $mode, $matcher) {
 	
 	@if ($mode == 'class') {
