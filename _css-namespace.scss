@@ -31,7 +31,7 @@
 
   @if ($mode == 'class') {
 
-    .#{namespace} {
+    .#{$namespace} {
       @content;
     }
   } @else {
